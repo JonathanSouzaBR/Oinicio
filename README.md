@@ -1,2 +1,4 @@
-# Oinicio
- O começo em Python
+# O Inicio
+ O começo em Python, documentado como meu primeiro repositório
+
+ Evolução a partir do zero!
