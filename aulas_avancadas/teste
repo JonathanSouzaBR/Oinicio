@@ -1,0 +1,24 @@
+# Lista para armazenar os dados
+dados = []
+
+# Loop para entrada de dados
+while True:
+    nome = input("Digite um nome (ou 'sair' para finalizar): ")
+    if nome.lower() == 'sair':
+        break  # Encerra a entrada de dados
+    
+    try:
+        numero = int(input("Digite um número para esse nome: "))
+        dados.append({"nome": nome, "numero": numero})
+    except ValueError:
+        print("Por favor, insira um número válido.")
+
+# Ordenando a lista com base no número
+dados_ordenados = sorted(dados, key=lambda x: x["numero"])
+
+# Exibindo a tabela formatada
+print("\nTabela Ordenada:")
+print(f"{'Nome':<15} {'Número':<10}")
+print("-" * 25)
+for item in dados_ordenados:
+    print(f"{item['nome']:<15} {item['numero']:<10}")

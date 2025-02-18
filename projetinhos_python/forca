@@ -29,18 +29,22 @@ while True:
 
     #adicionar a letra a lista de letras adivinhadas
     letras_adivinhadas.append(letra)
+    palavra_escondida = ''.join(letra if letra == palavra[indice]
+                                 else palavra_escondida[indice] for
+                                   indice in range (len(palavra_sorteada)))
 
-    #verificar se a letra digitada está na palavra sorteada
-    if letra in palavra_sorteada:
-        lista = []
-        for indice in range(len(palavra_sorteada)):
-            if letra == palavra_sorteada[indice]:
-                lista.append(letra)
-            else:
-                lista.append(palavra_escondida[indice])
-        palavra_escondida = "".join(lista) #se o jogador digitou a letra a então teremos = a**a
-
-    else: #letra não está na palavra sorteada
+#    #verificar se a letra digitada está na palavra sorteada
+#    if letra in palavra_sorteada:
+#        lista = []
+#        for indice in range(len(palavra_sorteada)):
+#            if letra == palavra_sorteada[indice]:
+#                lista.append(letra)
+#            else:
+#                lista.append(palavra_escondida[indice])
+#        palavra_escondida = "".join(lista) #se o jogador digitou a letra a então teremos = a**a
+#
+                                else:
+        #letra não está na palavra sorteada
         max_tentativas -= 1
         print(f"Letra não encontrada. Você tem mais {max_tentativas} tentativas")
 
